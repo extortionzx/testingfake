@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #060606;
+}
+
+.navbar {
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #060606;
+  border-color: #282828;
+  border: 1px solid #282828;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .auth-links {
+  display: flex;
+  margin-right: 15em;
+}
+
+.navbar .auth-links ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .auth-links li {
+  margin-left: 20px;
+}
+
+a {
+  color: #888888;
+  margin: 5px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+}
+
+a.active {
+  color: white;
+}
+
+.container {
+  position: fixed;
+  top: 50px; /* Adjust this value to the height of the navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto; /* Allows scrolling if content overflows */
+  background-color: #060606; /* Ensure the background color is the same */
+  padding: 20px; /* Optional padding for content */
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  position: relative;
+  font-size: 39px;
+  font-weight: 100;
+}
+
+
+/* Products styling start here*/
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjust this as needed */
+  gap: 20px; /* Space between boxes */
+}
+
+.boxes {
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17.5em; /* Adjust the width as needed */
+}
+
+p {
+  font-size: 14px;
+}
+
+
+.airpods { 
+  width: 20em;
+  height: 20em;
+  top: 16px;
+  border: 1px rgba(71, 71, 71, 0.775);
+  box-shadow: -1px -1px 15px rgba(128, 128, 128, 0.5);
+  background-color: rgba(32, 32, 32, 0);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.airpods:hover {
+  border-color: rgba(255, 0, 0, 0.391);
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* slight red background glow */
+}
+
+#info {
+  font-size: 17px;
+}
+

@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #060606;
+}
+
+.navbar {
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #060606;
+  border-color: #282828;
+  border: 1px solid #282828;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .auth-links {
+  display: flex;
+  margin-right: 15em;
+}
+
+.navbar .auth-links ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.Lol, .Reg {
+  position: relative;
+  left: 140px; /* Adjust as needed */
+}
+
+.navbar .auth-links li {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .auth-links li i {
+  margin-left: 5px;
+}
+
+a {
+  color: #888888;
+  margin: 5px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+a.active {
+  color: white;
+}
+
+.container {
+  position: fixed;
+  top: 50px; /* Adjust this value to the height of the navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto; /* Allows scrolling if content overflows */
+  background-color: #060606; /* Ensure the background color is the same */
+  padding: 20px; /* Optional padding for content */
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 39px;
+  font-weight: 100;
+}
+
+.boxes {
+  border-color: red;
+}
+
+p {
+  font-size: 14px;
+}
+
+.airpods {
+  width: 20em;
+  height: 20em;
+  left: 15em;
+  overflow: hidden;
+  position: relative;
+  bottom: 5em;
+}
+
+.info-card-container {
+  width: 22em;
+  position: relative;
+  left: 35em;
+  height: 8.9em;
+  bottom: 20em;
+  transition: transform 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between button containers */
+  margin-top: 15px; /* Space above the container */
+}
+
+.buy {
+  border: 1px solid rgb(214, 214, 214);
+  width: 63px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(10, 247, 10, 0.721);
+  font-family: 'Roboto';
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+}
+
+.Back {
+  border: none;
+  border-radius: 6px;
+  width: 63px;
+  height: 25px;
+  overflow: auto; 
+  position: relative;
+  color: rgb(255, 255, 255);
+  background-color: rgba(10, 247, 10, 0);
+  font-family: 'Roboto';
+  top: 0;
+  cursor: pointer;
+}
+
+.Add-Cart {
+  border: none;
+  width: 83px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+  background-color: gray;
+  font-family: "Roboto";
+  border: 1px solid rgb(214, 214, 214);
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+}
+
+.buy:hover ~ .info-card-container,
+.info-card-container:hover {
+  transform: translateY(-10px); /* Adjust the translation distance as needed */
+}
+
