@@ -76,3 +76,48 @@ h1 {
   margin: auto;
   right: 160px;
 }
+
+@media (max-width: 600px) {
+  .navbar {
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #060606;
+  border-color: #282828;
+  border: 1px solid #282828;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  }
+  
+  .auth-links {
+    display: flex;
+    margin-right: 15em;
+  }
+   ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 47px;
+    left: 50px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-left: 0;
+    margin-bottom: 10px;
+    left: 167px;
+    top: 50px;
+    position: relative;
+  }
+  
+  .container {
+    padding: 10px;
+    position: fixed;
+    margin-top: 50px; /* Adjust for fixed navbar height */
+  }
+}
