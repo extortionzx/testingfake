@@ -31,6 +31,7 @@ body {
   border-radius: .75rem;
   text-align: center;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .wrapper h3 {
@@ -130,17 +131,11 @@ textarea {
   justify-content: flex-end;
   align-items: center;
   background-color: #060606;
-  border-color: #282828;
   border: 1px solid #282828;
-  position: fixed;
+  position: fixed; /* Changed to fixed */
   width: 100%;
-  top: 0;
+  top: 0; /* Changed to top to fix it at the top */
   z-index: 1000;
-}
-
-.navbar .auth-links {
-  display: flex;
-  margin-right: 15em;
 }
 
 .navbar .auth-links ul {
@@ -148,15 +143,16 @@ textarea {
   display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
+  right: 255px;
 }
 
 .navbar .auth-links li {
-  margin-left: 20px;
+  margin-left: 22px;
 }
 
 a {
   color: #888888;
-  margin: 5px;
   font-size: 14px;
   text-decoration: none;
 }
