@@ -14,8 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Test</title>
 </head>
@@ -31,33 +29,36 @@
       </ul>
     </div>
   </nav>
-  
-  <div class="container">
+  <div class="wrapper">
     <div class="APLdealer">
       <h1 style="font-family: 'Lacquer';">Products</h1>
       <div class="product-grid">
         <div class="boxes">
-          <a href="airpods1.html"><img class="airpods" src="fuckthis.png"></a>  
-          <p id="info" style="font-family: 'Roboto';">AirPods Pro</p>
-          <p id="info" style= "margin:0; color: green; font-family: 'Roboto';" >In Stock</p>
-          <p id="info" style="font-family: 'Roboto';">Price: $110</p>
+          <a href="airpods1.html"><img class="airpods" src="fuckthis.png" alt="AirPods Pro"></a>  
+          <p class="info">AirPods Pro</p>
+          <p class="info" style="margin:0; color: rgb(212, 0, 0);">Out of Stock</p>
+          <p class="info" id="price">Price: $50</p>
         </div>
         
         <div class="boxes">
-          <a href="airpods2.html"><img class="airpods" src="23175-apple-airpods-pro-2-genera.png"></a>  
-          <p id="info" style="font-family: 'Roboto';">AirPods Pro (2nd generation)</p>
-          <p id="info" style= "margin:0; color: green; font-family: 'Roboto';" >In Stock</p>
-          <p id="info" style="font-family: 'Roboto';">Price: $160</p>
+          <a href="airpods2.html"><img class="airpods" src="23175-apple-airpods-pro-2-genera.png" alt="AirPods Pro 2nd generation"></a>  
+          <p class="info">AirPods Pro (2nd generation)</p>
+          <p class="info" style="margin:0; color: green;">In Stock</p>
+          <p class="info" id="price">Price: $50</p>
         </div>
         
         <div class="boxes">
-          <a href="airpods3.html"><img class="airpods" src="airpods3fuck-removebg-preview.png"></a>  
-          <p id="info" style="font-family: 'Roboto';">AirPods Pro (3rd generation)</p>
-          <p id="info" style= "margin:0; color: green; font-family: 'Roboto';" >In Stock</p>
-          <p id="info" style="font-family: 'Roboto';">Price: $120</p>
+          <a href="airpods3.html"><img class="airpods" src="airpods3fuck-removebg-preview.png" alt="AirPods Pro 3rd generation"></a>  
+          <p class="info">AirPods Pro (3rd generation)</p>
+          <p class="info" style="margin:0; color: green;">In Stock</p>
+          <p class="info" id="price">Price: $50</p>
+        </div>
+
+        <!-- Add more boxes here -->
         </div>
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
