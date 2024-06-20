@@ -1,9 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
   background: #060606;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
+  color: white;
+  margin-top: 60px; /* To prevent content from hiding behind the navbar */
 }
 
 .navbar {
@@ -12,17 +17,11 @@ body {
   justify-content: flex-end;
   align-items: center;
   background-color: #060606;
-  border-color: #282828;
   border: 1px solid #282828;
-  position: fixed;
+  position: fixed; /* Changed to fixed */
   width: 100%;
-  top: 0;
+  top: 0; /* Changed to top to fix it at the top */
   z-index: 1000;
-}
-
-.navbar .auth-links {
-  display: flex;
-  margin-right: 15em;
 }
 
 .navbar .auth-links ul {
@@ -30,15 +29,16 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
+  right: 255px;
 }
 
 .navbar .auth-links li {
-  margin-left: 20px;
+  margin-left: 22px;
 }
 
 a {
   color: #888888;
-  margin: 5px;
   font-size: 14px;
   text-decoration: none;
 }
@@ -52,37 +52,27 @@ a.active {
 }
 
 .wrapper {
-  position: fixed;
-  top: 50px; /* Adjust this value to the height of the navbar */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto; /* Allows scrolling if content overflows */
-  background-color: #060606; /* Ensure the background color is the same */
-  padding: 20px; /* Optional padding for content */
-  color: white;
+  padding: 20px;
+  padding-top: 80px; /* Adjust padding to accommodate the navbar height */
 }
 
 h1 {
   text-align: center;
-  color: white;
-  position: relative;
   font-size: 39px;
   font-weight: 100;
+  position: relative;
+  bottom: 50px;
 }
 
-
-/* Products styling start here*/
-
+/* Products styling start here */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Adjust this as needed */
-  gap: 20px; /* Space between boxes */
+  gap: 0px; /* Space between boxes */
 }
 
 .boxes {
-  position: relative;  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,17 +81,15 @@ h1 {
 
 p {
   font-size: 14px;
+  margin: 7px;
 }
-
 
 .airpods { 
   width: 20em;
   height: 20em;
-  top: 16px;
-  border: 1px rgba(71, 71, 71, 0.775);
+  border: 1px solid rgba(71, 71, 71, 0.775);
   box-shadow: -1px -1px 15px rgba(128, 128, 128, 0.5);
   background-color: rgba(32, 32, 32, 0);
-  position: relative;
   cursor: pointer;
   transition: transform 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
@@ -112,7 +100,7 @@ p {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* slight red background glow */
 }
 
-#info {
+.info {
   font-size: 17px;
 }
 
@@ -146,6 +134,16 @@ p {
     padding: 0;
   }
   
+  p {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+
+  #price {
+    margin-bottom: 19px;
+    margin-top: 5px;
+  }
+
   li {
     margin-left: 0;
     margin-bottom: 10px;
