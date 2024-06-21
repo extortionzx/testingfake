@@ -1,28 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
-  background: #060606;
+  background: #000000;
+  color: white;
+  margin-top: 60px; /* To prevent content from hiding behind the navbar */
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 1rem;
+  overflow-y: auto;
 }
+/*
+background: #060606;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding: 1rem;
+margin: 0; /* Remove default margin */
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: auto;
   width: 100%;
   max-width: 600px;
   padding: 1rem;
   margin-top: 70px; /* Adjust for fixed navbar height */
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .wrapper {
@@ -132,9 +147,9 @@ textarea {
   align-items: center;
   background-color: #060606;
   border: 1px solid #282828;
-  position: fixed; /* Changed to fixed */
+  position: fixed;
   width: 100%;
-  top: 0; /* Changed to top to fix it at the top */
+  top: 0;
   z-index: 1000;
 }
 
@@ -164,6 +179,8 @@ a:hover {
 a.active {
   color: white;
 }
+
+
 
 .review-container {
   background: #1a1a1a;
@@ -203,17 +220,17 @@ a.active {
 
 @media (max-width: 600px) {
   .navbar {
-  display: flex;
-  height: 50px;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #060606;
-  border-color: #282828;
-  border: 1px solid #282828;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+    display: flex;
+    height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #060606;
+    border-color: #282828;
+    border: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
   }
   
   .auth-links {
@@ -231,6 +248,16 @@ a.active {
     padding: 0;
   }
   
+  p {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+
+  #price {
+    margin-bottom: 19px;
+    margin-top: 5px;
+  }
+
   li {
     margin-left: 0;
     margin-bottom: 10px;
