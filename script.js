@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.auth-links a');
+
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+
   const allStar = document.querySelectorAll('.rating .star');
   const ratingValue = document.querySelector('.rating input');
-  const form = document.querySelector('form');
+  const form = document.getElementById('review-form');
   const opinion = document.querySelector('textarea');
   const reviewsList = document.querySelector('.reviews-list');
   const errorMessage = document.getElementById('error-message');
 
-  // Generates ID
+  // Generate or retrieve a unique user ID
   let userId = localStorage.getItem('userId');
   if (!userId) {
     userId = 'user_' + Date.now();
@@ -54,13 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
         userId: userId
       };
 
+      // Save the review to local storage
       saveReview(review);
 
+      // Update the last review time for the user
       localStorage.setItem('lastReviewTime_' + userId, currentTime);
 
-      // this shit adds the review to the page
+      // Add the review to the page
       addReviewToPage(review);
 
+      // Clear form fields
       ratingValue.value = '';
       opinion.value = '';
       allStar.forEach(i => {
@@ -68,9 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
         i.classList.remove('active');
       });
 
+      // Clear the error message
       errorMessage.textContent = '';
     }
   });
+
+  const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  storedReviews.forEach(addReviewToPage);
 
   function saveReview(review) {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
@@ -85,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`.review-container[data-id="${id}"]`).remove();
   }
 
-  // Function to add a review to the page
   function addReviewToPage(review) {
     const reviewContainer = document.createElement('div');
     reviewContainer.classList.add('review-container');
@@ -121,8 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reviewsList.appendChild(reviewContainer);
   }
-
-  const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-  storedReviews.forEach(addReviewToPage);
-
 });
