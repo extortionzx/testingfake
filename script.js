@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('.auth-links a');
-
-  links.forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add('active');
-    }
-  });
-
   const allStar = document.querySelectorAll('.rating .star');
   const ratingValue = document.querySelector('.rating input');
   const form = document.querySelector('form');
@@ -14,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const reviewsList = document.querySelector('.reviews-list');
   const errorMessage = document.getElementById('error-message');
 
-  // Generate or retrieve a unique user ID
+  // Generates ID
   let userId = localStorage.getItem('userId');
   if (!userId) {
     userId = 'user_' + Date.now();
@@ -62,16 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         userId: userId
       };
 
-      // Save the review to local storage
       saveReview(review);
 
-      // Update the last review time for the user
       localStorage.setItem('lastReviewTime_' + userId, currentTime);
 
-      // Add the review to the page
+      // this shit adds the review to the page
       addReviewToPage(review);
 
-      // Clear form fields
       ratingValue.value = '';
       opinion.value = '';
       allStar.forEach(i => {
@@ -79,13 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         i.classList.remove('active');
       });
 
-      // Clear the error message
       errorMessage.textContent = '';
     }
   });
-
-  const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-  storedReviews.forEach(addReviewToPage);
 
   function saveReview(review) {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
@@ -100,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`.review-container[data-id="${id}"]`).remove();
   }
 
+  // Function to add a review to the page
   function addReviewToPage(review) {
     const reviewContainer = document.createElement('div');
     reviewContainer.classList.add('review-container');
@@ -135,37 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reviewsList.appendChild(reviewContainer);
   }
+
+  const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+  storedReviews.forEach(addReviewToPage);
+
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const gifContainer = document.getElementById('gifContainer');
-
-  const gifUrl = 'https://romacta.com/wp-content/uploads/2023/02/airpods-pro-mexico.gif';
-  const gifImage = document.createElement('img');
-  gifImage.src = gifUrl;
-  gifImage.alt = 'Promotional GIF';
-  gifImage.style.maxWidth = '100%';
-  gifImage.style.height = 'auto';
-  
-  // Add event listener to detect when GIF animation ends
-  gifImage.addEventListener('animationend', function() {
-    gifImage.style.display = 'none'; // Hide the GIF
-    staticImage.style.display = 'block'; // Display the static image
-  });
-
-  const staticImageUrl = 'https://romacta.com/wp-content/uploads/2023/02/airpods-pro-mexico-static.jpg'; // Replace with the static image URL
-  const staticImage = document.createElement('img');
-  staticImage.src = staticImageUrl;
-  staticImage.alt = 'Static Image';
-  staticImage.style.maxWidth = '100%';
-  staticImage.style.height = 'auto';
-  staticImage.style.display = 'none'; // Initially hide the static image
-  
-  gifContainer.appendChild(gifImage);
-  gifContainer.appendChild(staticImage);
-});
-
-
-
-
