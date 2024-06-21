@@ -19,14 +19,6 @@ body {
   justify-content: center;
   overflow-y: auto;
 }
-/*
-background: #060606;
-display: flex;
-justify-content: center;
-align-items: flex-start;
-min-height: 100vh;
-padding: 1rem;
-margin: 0; /* Remove default margin */
 
 .container {
   display: flex;
@@ -180,8 +172,6 @@ a.active {
   color: white;
 }
 
-
-
 .review-container {
   background: #1a1a1a;
   padding: 1rem;
@@ -232,12 +222,13 @@ a.active {
     top: 0;
     z-index: 1000;
   }
-  
+
   .auth-links {
     display: flex;
     margin-right: 15em;
   }
-   ul {
+  
+  ul {
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -272,3 +263,4 @@ a.active {
     margin-top: 50px; /* Adjust for fixed navbar height */
   }
 }
+/*test comment github changes*/
